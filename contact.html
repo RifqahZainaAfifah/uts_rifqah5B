@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sejarah - Emina Beauty Blog</title>
+  <link rel="icon" href="logo emina.jpg">
+  <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+  <!-- 🕒 Waktu dan Lokasi -->
+  <div class="location-container">
+    <h2>Jakarta, Indonesia</h2>
+    <div id="Jakarta" class="clock" aria-live="polite" aria-label="Waktu real-time di Jakarta"></div>
+  </div>
+
+ 
+ <!-- 💕 Header -->
+  <header>
+    <div class="logo">
+      <img src="logo emina.jpg" alt="Logo Emina Beauty Blog">
+      <h1>Emina Beauty Blog</h1>
+    </div>
+
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="home.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">About ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="profil.html">Profil</a></li>
+            <li><a href="sejarah.html">Sejarah</a></li>
+            <li><a href="visimisi.html">Visi & Misi</a></li>
+            <li><a href="tujuan.html">Tujuan</a></li>
+          </ul>
+        </li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a href="registration.html" class="active" aria-current="page">Registration</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<!-- 💌 CONTACT SECTION -->
+  <main>
+    <section class="contact-section">
+      <h2>Hubungi Kami</h2>
+      <p class="subtitle">Kami senang mendengar dari kamu! Silakan isi form atau temukan kami di lokasi.</p>
+
+      <div class="contact-container">
+        <!-- 📞 INFO KONTAK -->
+        <div class="contact-info">
+          <h3>Informasi Kontak</h3>
+          <p><strong>Alamat:</strong> Jl. Melati No. 5, Jakarta Selatan, Indonesia</p>
+          <p><strong>Email:</strong> <a href="mailto:info@eminabeauty.co.id">info@eminabeauty.co.id</a></p>
+          <p><strong>Telepon:</strong> +62 812 3456 7890</p>
+
+          <div class="socials">
+            <a href="https://www.instagram.com/emina/" aria-label="Instagram Emina">🌸 Instagram</a>
+            <a href="https://www.youtube.com/c/EminaCosmetics" aria-label="YouTube Emina">🎥 YouTube</a>
+            <a href="https://www.tiktok.com/@eminacosmeticsid" aria-label="TikTok Emina">🎵 TikTok</a>
+          </div>
+
+          <div class="shopping">
+            <a href="https://shopee.co.id/eminaofficial" aria-label="Shoopee Emina">🌸 Shoopee/a>
+            <a href="https://www.blibli.com/merchant/emina-flagship-store/EMA-60025?pickupPointCode=PP-3523509&fbbActivated=true" aria-label="YouTube Emina">🎥 YouTube</a>
+            <a href="https://www.tokopedia.com/emina-official" aria-label="tokopedia Emina">🎵 tokopedia</a>
+            <a href="https://www.sociolla.com/182_emina" aria-label="Sociolla Emina">🎵 sociolla</a>
+          </div>
+        </div>
+
+        <!-- 📝 FORM PESAN -->
+        <div class="contact-form">
+          <form>
+            <h3>Kirim Pesan</h3>
+            <label for="name">Nama Lengkap:</label>
+            <input type="text" id="name" placeholder="Masukkan nama kamu" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Masukkan email aktif" required>
+
+            <label for="subject">Subjek:</label>
+            <input type="text" id="subject" placeholder="Tulis subjek pesan">
+
+            <label for="message">Pesan:</label>
+            <textarea id="message" placeholder="Tuliskan pesan kamu di sini..." required></textarea>
+
+            <button type="submit">Kirim Pesan</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- 🗺️ MAP -->
+      <!-- 🔍 Filter Lokasi -->
+    <div class="filter-section">
+      <label for="province">Select Province</label>
+      <select id="province">
+        <option value="">-- Pilih Provinsi --</option>
+        <option value="jakarta">DKI Jakarta</option>
+        <option value="jatim">Jawa Timur</option>
+      </select>
+      <button onclick="cariProvinsi()">Search Area</button>
+    </div>
+
+    <div class="content">
+      <!-- 🏠 Daftar Lokasi -->
+      <div class="lokasi-list">
+        <div class="lokasi-card" onclick="tampilkanMap('kasablanka')">
+          <h3>Emina Playground Kota Kasablanka</h3>
+          <p>Jl. Casablanca No.88, RT.16/RW.5, Menteng Dalam, Kec. Tebet, Jakarta Selatan 12960</p>
+          <p><strong>Email:</strong> marketing@eminacosmetics.com</p>
+        </div>
+
+        <div class="lokasi-card" onclick="tampilkanMap('malang')">
+          <h3>Emina Playground Malang Town Square</h3>
+          <p>Jl. Veteran No.2, Penanggungan, Kec. Klojen, Kota Malang, Jawa Timur 65111</p>
+          <p><strong>Email:</strong> marketing@eminacosmetics.com</p>
+        </div>
+      </div>
+
+      <!-- 🗺️ Peta -->
+      <div class="map-container">
+        <iframe id="mapFrame"
+          src="https://www.google.com/maps?q=Emina+Playground+Kota+Kasablanka&output=embed"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function tampilkanMap(lokasi) {
+      const map = document.getElementById('mapFrame');
+      if (lokasi === 'kasablanka') {
+        map.src = "https://www.google.com/maps?q=Emina+Playground+Kota+Kasablanka&output=embed";
+      } else if (lokasi === 'malang') {
+        map.src = "https://www.google.com/maps?q=Emina+Playground+Malang+Town+Square&output=embed";
+      }
+    }
+
+    function cariProvinsi() {
+      const province = document.getElementById("province").value;
+      const map = document.getElementById("mapFrame");
+      if (province === "jakarta") {
+        map.src = "https://www.google.com/maps?q=Jakarta&output=embed";
+      } else if (province === "jatim") {
+        map.src = "https://www.google.com/maps?q=Jawa+Timur&output=embed";
+      }
+    }
+  </script>
+
+   <!-- Footer -->
+  <footer>
+    <p>© 2025 Emina Beauty Blog | Designed with 💖 by Emina Creative Team</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/emina/" aria-label="Instagram Emina">Instagram</a>
+        <a href="https://www.youtube.com/c/EminaCosmetics" aria-label="YouTube Emina">YouTube</a>
+        <a href="https://www.tiktok.com/@eminacosmeticsid" aria-label="TikTok Emina">TikTok</a>
+    </div>
+  </footer>
+
+  <script src="sejarah.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration - Emina Beauty Blog</title>
+  <link rel="icon" href="logo emina.jpg">
+  <link rel="stylesheet" href="registration.css"> 
+</head>
+
+<body>
+  <!-- 🕒 Waktu dan Lokasi -->
+  <div class="location-container">
+    <h2>Jakarta, Indonesia</h2>
+    <div id="Jakarta" class="clock" aria-live="polite" aria-label="Waktu real-time di Jakarta"></div>
+  </div>
+
+ 
+ <!-- 💕 Header -->
+  <header>
+    <div class="logo">
+      <img src="logo emina.jpg" alt="Logo Emina Beauty Blog">
+      <h1>Emina Beauty Blog</h1>
+    </div>
+
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="home.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">About ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="profil.html">Profil</a></li>
+            <li><a href="sejarah.html">Sejarah</a></li>
+            <li><a href="visimisi.html">Visi & Misi</a></li>
+            <li><a href="tujuan.html">Tujuan</a></li>
+          </ul>
+        </li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a href="registration.html" class="active" aria-current="page">Registration</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ <!-- 💖 REGISTRATION SECTION -->
+  <section class="registration-section">
+    <div class="registration-container">
+
+      <!-- 📸 BROCHURE -->
+      <div class="brochure">
+        <img src="https://scontent.cdninstagram.com/v/t51.82787-15/573870384_18534833962007216_2852516913216880003_n.jpg?stp=dst-jpg_e35_p480x480_tt6&_nc_cat=110&ig_cache_key=Mzc1NzUyNTA2MTgwNTM5NzA0Mw%3D%3D.3-ccb1-7&ccb=1-7&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEyODR4MjI4Mi5zZHIuQzMifQ%3D%3D&_nc_ohc=emZlephT5gYQ7kNvwHrNU04&_nc_oc=AdnIumGxasTXXvd0MCk5rSbLBI4_Z80hRhJUG6v84WMcEcKSTFmTDh8XFolG1ih_eds&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=kCnKawhxBQILW3-z-AfzPg&oh=00_AfhJihECmMBhBXGEFG1VgCYgELlfx9je997NrIx0iClcbA&oe=690E748E" alt="Brosur Emina Look Studio">
+      </div>
+
+      <!-- 📜 KOTAK KETENTUAN -->
+      <div class="terms-box">
+        <h2>Ketentuan & Informasi Event</h2>
+        <ul>
+          <li>Event berlangsung pada <strong>3 – 23 November 2025</strong> di <strong>K-Life, Blok M (Lantai 3)</strong>.</li>
+          <li>Harga tiket <strong>Rp 150.000</strong> setara dengan pengalaman kecantikan senilai 2,5 juta!</li>
+          <li>Peserta akan mendapatkan pengalaman:
+            <ul>
+              <li>💖 Personal Palette & Face Shaping</li>
+              <li>💄 Makeup on The Spot</li>
+              <li>👗 Fashion Try On</li>
+            </ul>
+          </li>
+          <li>Dapatkan juga bonus:
+            <ul>
+              <li>📸 Snapshot Look</li>
+              <li>🎟️ Voucher Skincare/Cushion Rp 50.000</li>
+              <li>☕ Diskon Minuman 10% di K-Life</li>
+            </ul>
+          </li>
+          <li>Pilih lokasi kunjungan sesuai jadwal kota yang tersedia di form registrasi.</li>
+          <li>Pendaftaran hanya berlaku untuk individu (1 tiket = 1 peserta).</li>
+        </ul>
+      </div>
+
+      <!-- 📝 FORM REGISTRASI -->
+      <div class="form-box">
+        <h2>Form Registrasi Peserta</h2>
+        <form action="#" method="post">
+          <label for="nama">Nama Lengkap:</label>
+          <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Masukkan email aktif" required>
+
+          <label for="telepon">Nomor Telepon:</label>
+          <input type="tel" id="telepon" name="telepon" placeholder="08xxxxxxxxxx" required>
+
+          <label for="kota">Pilih Lokasi Event:</label>
+          <select id="kota" name="kota" required>
+            <option value="">-- Pilih Kota --</option>
+            <option value="Bekasi">Bekasi - THR Shop Cikarang (24–30 Nov)</option>
+            <option value="Solo">Solo - Neyya UNS (18–23 Nov)</option>
+            <option value="Cirebon">Cirebon - Surya Cantik (11–16 Nov)</option>
+            <option value="Yogyakarta">Yogyakarta - Jelita UII / Mutiara Godean</option>
+            <option value="Bandung">Bandung - Makeupuccino / Kaka Beauty</option>
+            <option value="Surabaya">Surabaya - Belia Barata / Envio Rungkut</option>
+          </select>
+
+          <label for="tanggal">Tanggal Kunjungan:</label>
+          <input type="date" id="tanggal" name="tanggal" required>
+
+          <label for="pesan">Pesan atau Catatan Tambahan:</label>
+          <textarea id="pesan" name="pesan" rows="4" placeholder="Tulis pesan tambahan jika ada..."></textarea>
+
+          <button type="submit">Kirim Registrasi</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+ <!-- Footer -->
+  <footer>
+    <p>© 2025 Emina Beauty Blog | Designed with 💖 by Emina Creative Team</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/emina/" aria-label="Instagram Emina">Instagram</a>
+        <a href="https://www.youtube.com/c/EminaCosmetics" aria-label="YouTube Emina">YouTube</a>
+        <a href="https://www.tiktok.com/@eminacosmeticsid" aria-label="TikTok Emina">TikTok</a>
+    </div>
+  </footer>
+  <script src="sejarah.js"></script>
+</body>
+</html>

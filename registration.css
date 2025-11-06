@@ -1,0 +1,296 @@
+/* === 🌸 GLOBAL STYLE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffd6e8;
+  color: #4a4a4a;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* === 💕 HEADER === */
+header {
+  background: linear-gradient(90deg, #ffc1e3, #d8bfd8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 3px solid #fff;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 3px;
+}
+
+header .logo h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+/* === NAVIGATION === */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+nav ul li a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 0.95rem;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ffeef5;
+  text-shadow: 0 0 10px #ffffff;
+}
+
+/* === DROPDOWN MENU === */
+nav ul li {
+  position: relative;
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background: #f9b8d4;
+  top: 100%;
+  left: 0;
+  padding: 10px 0;
+  list-style: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  min-width: 150px;
+  z-index: 1001;
+}
+
+nav ul li:hover ul {
+  display: block;
+}
+
+nav ul li ul li {
+  padding: 8px 20px;
+}
+
+nav ul li ul li a {
+  color: #fff;
+  font-weight: 500;
+  display: block;
+}
+
+nav ul li ul li a:hover {
+  color: #ffeef5;
+}
+
+/* === 📍 LOKASI & JAM === */
+.location-container {
+  background-color: #ffe6f2;
+  text-align: center;
+  padding: 15px;
+  border-bottom: 2px solid #ffb6c1;
+}
+
+.location-container h2 {
+  color: #ff69b4;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.clock {
+  font-size: 22px;
+  font-weight: 600;
+  color: #d63384;
+  background: #fff0f6;
+  display: inline-block;
+  padding: 6px 15px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(255,105,180,0.3);
+  margin-top: 5px;
+  letter-spacing: 1px;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.03); }
+}
+
+/* === REGISTRATION SECTION === */
+.registration-section {
+  padding: 70px 8%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  background: url('https://i.ibb.co/PM6mMSZ/pink-background.jpg') no-repeat center/cover;
+}
+
+.registration-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  background: rgba(255, 240, 246, 0.92);
+  backdrop-filter: blur(6px);
+  padding: 50px;
+  border-radius: 25px;
+  box-shadow: 0 6px 20px rgba(255,105,180,0.25);
+  max-width: 1100px;
+  animation: fadeIn 0.8s ease-in-out;
+  position: relative;
+}
+
+/* === GAMBAR BROSUR SAMPING === */
+.brochure {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brochure img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(255,105,180,0.3);
+  transition: 0.3s;
+}
+
+.brochure img:hover {
+  transform: scale(1.03);
+}
+
+/* === KOTAK KETENTUAN === */
+.terms-box {
+  flex: 1 1 400px;
+  background: linear-gradient(145deg, #ffe1f0, #ffd1e0);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: inset 0 0 15px rgba(255,105,180,0.2);
+  animation: fadeIn 1s ease-in;
+}
+
+.terms-box h2 {
+  color: #d63384;
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align: center;
+  border-bottom: 2px solid #ffb3d9;
+  padding-bottom: 10px;
+}
+
+.terms-box ul {
+  list-style: disc;
+  padding-left: 25px;
+  margin-top: 10px;
+}
+
+.terms-box li {
+  margin-bottom: 10px;
+  color: #4a4a4a;
+  line-height: 1.7;
+}
+
+/* === FORM REGISTRASI === */
+.form-box {
+  flex: 1 1 400px;
+  background: #fff;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(255,105,180,0.2);
+}
+
+.form-box h2 {
+  color: #d63384;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 26px;
+}
+
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #6a1b9a;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ffc1e3;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: 0.3s;
+  background: #fff;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #ff69b4;
+  box-shadow: 0 0 6px rgba(255,105,180,0.3);
+  outline: none;
+}
+
+form button {
+  width: 100%;
+  background: linear-gradient(90deg, #ff84b7, #d8bfd8);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: linear-gradient(90deg, #ff69b4, #cfa7e4);
+  transform: translateY(-2px);
+}
+
+
+/* === FOOTER === */
+footer {
+  background: linear-gradient(90deg, #ff84b7, #cdb4db);
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  border-top: 3px solid #fff6fa;
+}
+
+/* === ANIMASI FADE-IN === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

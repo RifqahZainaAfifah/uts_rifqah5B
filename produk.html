@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emina Beauty Product</title>
+  <link rel="icon" href="logo.jpg" />
+  <style>
+    /* === 🌸 GLOBAL STYLE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffd6e8;
+  color: #4a4a4a;
+  line-height: 1.6;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* === 🌸 HEADER === */
+header {
+  background: linear-gradient(90deg, #ffc1e3, #d8bfd8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 50px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 3px solid #fff;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 4px;
+  object-fit: contain;
+}
+
+header .logo h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* === 🌸 NAVIGATION === */
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ffeef5;
+  text-shadow: 0 0 10px #ffffff;
+}
+
+/* === 🌸 DROPDOWN === */
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background: #f9b8d4;
+  top: 110%;
+  left: 0;
+  border-radius: 10px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+  min-width: 160px;
+  z-index: 1001;
+}
+
+nav ul li:hover ul {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+nav ul li ul li {
+  padding: 10px 20px;
+}
+
+nav ul li ul li a {
+  color: #fff;
+  display: block;
+}
+
+nav ul li ul li a:hover {
+  color: #ffeef5;
+  text-shadow: 0 0 5px #fff;
+}
+
+/* === 🌸 LOCATION & CLOCK === */
+.location-container {
+  background-color: #ffe6f2;
+  text-align: center;
+  padding: 18px;
+  border-bottom: 2px solid #ffb6c1;
+}
+
+.location-container h2 {
+  color: #ff69b4;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.clock {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #d63384;
+  background: #fff0f6;
+  display: inline-block;
+  padding: 6px 15px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(255, 105, 180, 0.3);
+  animation: pulse 1s infinite alternate;
+  letter-spacing: 1px;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+    /* === 🌸 PRODUK SECTION === */
+    .produk-section {
+      background-color: #fff6fa;
+      padding: 60px 40px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .produk-section h2 {
+      font-size: 2rem;
+      color: #ff4fa3;
+      font-weight: 700;
+      margin-bottom: 35px;
+    }
+
+    /* === 🌸 SLIDER WRAPPER === */
+    .slider-container {
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    /* === 🌸 PRODUK LIST === */
+    .produk-list {
+      display: flex;
+      gap: 25px;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      padding: 20px 0;
+    }
+
+    .produk-list::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* === 🌸 KARTU PRODUK === */
+    .produk-item {
+      background: #ffffff;
+      border-radius: 20px;
+      flex: 0 0 auto;
+      width: 230px;
+      padding: 18px 15px 25px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      scroll-snap-align: start;
+    }
+
+    .produk-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(255, 150, 200, 0.3);
+    }
+
+    .produk-item img {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .btn-produk {
+      background: #ff89bb;
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 15px;
+      margin-top: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-produk:hover {
+      background: #ff4fa3;
+      transform: scale(1.05);
+    }
+
+    /* === 🌸 DESKRIPSI PRODUK === */
+    .produk-detail {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      font-size: 0.85rem;
+      color: #555;
+      background: #fff0f6;
+      border-radius: 10px;
+      padding: 0 10px;
+      margin-top: 10px;
+      text-align: left;
+    }
+
+    .produk-item.active .produk-detail {
+      max-height: 200px;
+      padding: 10px;
+    }
+
+    /* === 🌸 SLIDER BUTTON === */
+    .slide-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #ff89bb;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .slide-btn:hover {
+      background: #ff4fa3;
+      transform: scale(1.1);
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    /* === 🌸 FOOTER === */
+    footer {
+      background: linear-gradient(90deg, #ff84b7, #cdb4db);
+      text-align: center;
+      padding: 20px;
+      color: #fff;
+      font-size: 0.9rem;
+      border-top: 3px solid #fff6fa;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🌸 JAM -->
+  <div class="location-container">
+    <h2>Jakarta, Indonesia</h2>
+    <div id="Jakarta" class="clock"></div>
+  </div>
+
+  <!-- 🌸 HEADER -->
+ <header>
+    <div class="logo">
+      <img src="logo emina.jpg" alt="Logo Emina Beauty Blog">
+      <h1>Emina Beauty Blog</h1>
+    </div>
+
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="home.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">About ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="profil.html">Profil</a></li>
+            <li><a href="sejarah.html">Sejarah</a></li>
+            <li><a href="visimisi.html">Visi & Misi</a></li>
+            <li><a href="tujuan.html">Tujuan</a></li>
+          </ul>
+        </li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a href="registration.html" class="active" aria-current="page">Registration</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ 
+
+  <!-- 🌸 SECTION 1: LOOSE POWDER -->
+  <main>
+    <section class="produk-section">
+      <h2>✨ Loose Powder ✨</h2>
+
+      <div class="slider-container">
+        <button class="slide-btn prev" aria-label="Sebelumnya">&#10094;</button>
+
+        <div class="produk-list">
+          <!-- PRODUK 1 -->
+          <article class="produk-item">
+            <img src="https://www.eminacosmetics.com/cfind/source/thumb/images/cover_w506_h506_screenshot-2025-04-10-104756.png" alt="Emina Compact Powder" />
+            <h3>Emina Daily Matte Compact Powder (Collaboration)</h3>
+            <p class="harga">Rp 40.000</p>
+            <button class="btn-produk">Description</button>
+            <div class="produk-detail">
+              <p>Bedak padat dengan healthy-matte dan smooth finish yang ringan digunakan hingga 8 jam. Mengandung UV filter untuk melindungi kulit serta oil control agent untuk menahan minyak. Tidak menyebabkan komedo atau jerawat.</p>
+            </div>
+          </article>
+
+          <!-- PRODUK 2 -->
+          <article class="produk-item">
+            <img src="https://www.eminacosmetics.com/cfind/source/thumb/images/product/bb/cover_w236_h255_packshot-adjust-236-x-255-5.png" alt="Emina Loose Powder" />
+            <h3>Bright Stuff Loose Powder</h3>
+            <p class="harga">Rp 28.000</p>
+            <button class="btn-produk">Description</button>
+            <div class="produk-detail">
+              <p>Memberikan tampilan matte alami yang cerah, halus, dan tahan lama. Diformulasikan dengan partikel mikro yang menyatu sempurna di kulit untuk hasil bercahaya alami.</p>
+            </div>
+          </article>
+
+          <!-- PRODUK 3 -->
+          <article class="produk-item">
+            <img src="https://www.eminacosmetics.com/cfind/source/thumb/images/product/bwm/cover_w322_h_sebum-fighter-loose-swatch.png" alt="Emina Loose Powder" />
+            <h3>Sebum Fighter - Loose Powder</h3>
+            <p class="harga">Rp 66.500</p>
+            <button class="btn-produk">Description</button>
+            <div class="produk-detail">
+              <p>Bedak tabur ringan dengan partikel penyerap sebum, menjaga wajah bebas kilap sepanjang hari.</p>
+            </div>
+          </article>
+
+          <!-- PRODUK 4 -->
+          <article class="produk-item">
+            <img src="https://www.eminacosmetics.com/cfind/source/thumb/images/product/makeup/cover_w322_h_main-1-bwm-loose-powder.png" alt="Emina Loose Powder" />
+            <h3>Bare with Me Mineral</h3>
+            <p class="harga">Rp 63.500</p>
+            <button class="btn-produk">Description</button>
+            <div class="produk-detail">
+              <p>Kombinasi Mica dan Lauroyl Lysine alami memberikan hasil halus untuk semua jenis kulit. Dilengkapi bahan penyerap minyak.</p>
+            </div>
+          </article>
+
+          <!-- PRODUK 5 -->
+          <article class="produk-item">
+            <img src="https://i.pinimg.com/736x/6b/34/c4/6b34c424eba9d6a2bd1c96d2742710df.jpg" alt="Emina Loose Powder" />
+            <h3>EMINA DAILY MATTE LOOSE POWDER</h3>
+            <p class="harga">Rp 39.000</p>
+            <button class="btn-produk">Description</button>
+            <div class="produk-detail">
+              <p>Bedak tabur harian dengan oil control ringan, membuat wajah matte dan segar sepanjang hari.</p>
+            </div>
+          </article>
+        </div>
+
+        <button class="slide-btn next" aria-label="Berikutnya">&#10095;</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- 🌸 SECTION 2: PRODUK TERBARU -->
+  <main>
+    <section class="produk-section">
+      <h2>✨ Loose Powder & Cushion ✨</h2>
+
+      <div class="slider-container">
+        <button class="slide-btn prev" aria-label="Sebelumnya">&#10094;</button>
+
+        <div class="produk-list">
+        <article class="produk-item">
+          <img src="https://i.pinimg.com/1200x/57/6c/37/576c3770136d8ab56a500178d28393cf.jpg" alt="Emina Compact Powder" />
+          <h3>Daily Matte Compact Powder</h3>
+          <p class="harga">Rp 42.000</p>
+          <button class="btn-produk">Description</button>
+          <div class="produk-detail">
+            <p>Hasil akhir matte dan halus hingga 8 jam. Mengandung UV filter dan oil control agent, tidak menimbulkan komedo.</p>
+          </div>
+        </article>
+
+        <article class="produk-item">
+          <img src="https://i.pinimg.com/736x/97/d0/56/97d056aca0727d889107a460faf2005f.jpg" alt="Emina Compact Powder" />
+          <h3>City Chic CC Cake</h3>
+          <p class="harga">Rp 53.500</p>
+          <button class="btn-produk">Description</button>
+          <div class="produk-detail">
+            <p>Perpaduan unik bedak dan alas bedak dengan hasil akhir halus dan lembut. Diperkaya Apricot Oil untuk melembapkan kulit.</p>
+          </div>
+        </article>
+
+         <article class="produk-item">
+            <img src="https://down-id.img.susercontent.com/file/sg-11134201-8258x-mg1t3dq86psf8c.webp" alt="Emina Cushion" />
+            <h3>Emina x MUZIKTIGER Daily Matte Cushion</h3>
+            <p class="harga">Rp 120.000</p>
+            <button class="btn-produk">Description</button>
+            <div class="produk-detail">
+              <p>Hasil akhir matte, ringan, dan tersedia dalam 6 warna yang cocok untuk semua warna kulit.</p>
+            </div>
+          </article>
+
+          <article class="produk-item">
+            <img src="https://i.pinimg.com/1200x/a9/0f/53/a90f5302deaa77747c4801b917490531.jpg" alt="Cushion" />
+            <h3>Emina Daily Day Cushion</h3>
+            <p class="harga">Rp 90.000</p>
+            <button class="btn-produk">Description</button>
+            <div class="produk-detail">
+              <p>Alas bedak ringan dengan hasil matte sehat, mengandung oil control agent dan mampu bertahan hingga 8 jam.</p>
+            </div>
+          </article>
+
+          <article class="produk-item">
+            <img src="https://i.pinimg.com/1200x/a3/e6/d6/a3e6d6651177e23cebd60b1890e8b5b5.jpg" alt="Emina Loose Powder" />
+            <h3>Emina 3in1 Skincare Cushion</h3>
+            <p class="harga">Rp 115.000</p>
+            <button class="btn-produk">Description</button>
+            <div class="produk-detail">
+              <p>Cushion ringan dengan formula skincare-infused yang memberi hasil flawless dan nyaman digunakan sehari-hari.</p>
+            </div>
+          </article>
+        <button class="slide-btn next">&#10095;</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- 🌸 SECTION 3: CUSHION -->
+  <main>
+    <section class="produk-section">
+      <h2>✨ Blush ✨</h2>
+      <div class="slider-container">
+        <button class="slide-btn prev" aria-label="Sebelumnya">&#10094;</button>
+        <div class="produk-list">
+
+          <article class="produk-item">
+            <img src="https://www.eminacosmetics.com/cfind/source/thumb/images/cover_w506_h506_screenshot-2025-03-08-085732.png" alt="Emina Blush" />
+            <h3>Cheek Lit Pressed Blush x Muzik Tiger</h3>
+            <p class="harga">Rp 44.000</p>
+            <button class="btn-produk">Description</button>
+            <div class="produk-detail">
+              <p>Emina Cheek Lit Pressed Blush, blush on yangwarnanya menyatu dengan kulit dan memberikan tampilan pipi yang tampak halus. Diformulasikan dengan Magnetic Color Particles yang tahan lama hingga 8 jam dan Micro Spherical Powder untuk tampilan akhir pipi tampak halus. Tersedia dalam 6 varian warna untuk berbagai tampilan, dari hasil natural "no-makeup" glow hingga creative look untuk jiwa-jiwa eksploratif!.</p>
+            </div>
+          </article>
+
+          <article class="produk-item">
+            <img src="https://www.eminacosmetics.com/cfind/source/thumb/images/cover_w236_h255_tw1585_th1714_x1461_y1388_img_0065_swatch-blush-stick-peach_ok.png" alt="Blush" />
+            <h3>Cheek Lit Blush Stick</h3>
+            <p class="harga">Rp 60.000</p>
+            <button class="btn-produk">Description</button>
+            <div class="produk-detail">
+              <p>Emina Cheek Lit Blush Stick merupakan blush on dalam bentuk stick dengan tekstur creamy to powder sehingga mudah di baurkan dan memberikan finish matte. Formulanya mampu memberikan tampilan pipi merona yang halus karena soft focus agentnya sehingga mampu menyamarkan pori-pori serta memiliki warna yang intense dalam satu kali olesan.</p>
+            </div>
+          </article>
+
+          <article class="produk-item">
+            <img src="https://www.eminacosmetics.com/cfind/source/thumb/images/product/sugarrush-lipstick/cover_w506_h506_emina-blush-on-chek-lit-04.png" alt="Blush" />
+            <h3>Cheeklit Pressed</h3>
+            <p class="harga">Rp 45.000</p>
+            <button class="btn-produk">Description</button>
+            <div class="produk-detail">
+              <p>Cerahkan pipimu dengan warna-warna merona! Emina Cheeklit Pressed Powder hadir dalam 6 warna intens (Violet Berry, Cotton Candy, Cherry Blossoms, Sugarcane, Bittersweet, Marshmallow Lady) yang sesuai dengan kepribadian dan suasana hatimu. Warna-warna pink untuk tampilan imut dan menggoda, dan warna-warna nude untuk tampilan natural dan segar.</p>
+            </div>
+          </article>
+
+            <article class="produk-item">
+            <img src="https://www.eminacosmetics.com/cfind/source/thumb/images/product/cream-blush/cover_w322_h_violet.png" alt="Blush" />
+            <h3>Cheeklit Cream Blush</h3>
+            <p class="harga">Rp 45.000</p>
+            <button class="btn-produk">Description</button>
+            <div class="produk-detail">
+              <p>Perona pipimu dan buat dirimu tampak memukau! Berkat formula yang mudah digunakan dan teknologi Color Enhance, Emina Cheeklit Cream Blush akan mempertegas rona alami pipimu dengan hasil yang lembut dan tahan lama. Diperkaya dengan squalane sebagai pelembap untuk kulit sehat dan bercahaya. Tersedia dalam 4 warna (Pink, Peach, Nudie Brown, Violet).</p>
+            </div>
+          </article>
+      <button class="slide-btn next">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Emina Beauty Blog | Designed with 💖 by Emina Creative Team</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/emina/" aria-label="Instagram Emina">Instagram</a>
+        <a href="https://www.youtube.com/c/EminaCosmetics" aria-label="YouTube Emina">YouTube</a>
+        <a href="https://www.tiktok.com/@eminacosmeticsid" aria-label="TikTok Emina">TikTok</a>
+    </div>
+  </footer>
+
+
+  <script>
+    // 🌸 Clock: tampilkan waktu real-time
+    function updateClock() {
+      const now = new Date();
+      const options = { timeZone: "Asia/Jakarta", hour12: false };
+      const timeString = now.toLocaleTimeString("id-ID", options);
+      const clockEl = document.getElementById("Jakarta");
+      if (clockEl) clockEl.textContent = timeString;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // 🌸 Interaksi tombol "Description"
+    const produkButtons = document.querySelectorAll('.btn-produk');
+    produkButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.produk-item');
+        if (!item) return;
+
+        document.querySelectorAll('.produk-item').forEach(other => {
+          if (other !== item) other.classList.remove('active');
+        });
+
+        item.classList.toggle('active');
+        button.textContent = item.classList.contains('active')
+          ? 'Hide Description'
+          : 'Description';
+      });
+    });
+
+    // 🌸 Slider Geser Kanan-Kiri
+    const slider = document.querySelector('.produk-list');
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+
+    if (slider && nextBtn && prevBtn) {
+      nextBtn.addEventListener('click', () => {
+        slider.scrollBy({ left: 300, behavior: 'smooth' });
+      });
+      prevBtn.addEventListener('click', () => {
+        slider.scrollBy({ left: -300, behavior: 'smooth' });
+      });
+      setInterval(() => {
+        slider.scrollBy({ left: 300, behavior: 'smooth' });
+      }, 7000);
+    }
+  </script>
+</body>
+</html>

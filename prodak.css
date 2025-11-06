@@ -1,0 +1,311 @@
+/* === 🌸 GLOBAL STYLE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffd6e8;
+  color: #4a4a4a;
+  line-height: 1.6;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* === 🌸 HEADER === */
+header {
+  background: linear-gradient(90deg, #ffc1e3, #d8bfd8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 50px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 3px solid #fff;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 4px;
+  object-fit: contain;
+}
+
+header .logo h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* === 🌸 NAVIGATION === */
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ffeef5;
+  text-shadow: 0 0 10px #ffffff;
+}
+
+/* === 🌸 DROPDOWN === */
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background: #f9b8d4;
+  top: 110%;
+  left: 0;
+  border-radius: 10px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+  min-width: 160px;
+  z-index: 1001;
+}
+
+nav ul li:hover ul {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+nav ul li ul li {
+  padding: 10px 20px;
+}
+
+nav ul li ul li a {
+  color: #fff;
+  display: block;
+}
+
+nav ul li ul li a:hover {
+  color: #ffeef5;
+  text-shadow: 0 0 5px #fff;
+}
+
+/* === 🌸 LOCATION & CLOCK === */
+.location-container {
+  background-color: #ffe6f2;
+  text-align: center;
+  padding: 18px;
+  border-bottom: 2px solid #ffb6c1;
+}
+
+.location-container h2 {
+  color: #ff69b4;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.clock {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #d63384;
+  background: #fff0f6;
+  display: inline-block;
+  padding: 6px 15px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(255, 105, 180, 0.3);
+  animation: pulse 1s infinite alternate;
+  letter-spacing: 1px;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+/* === 🌸 PRODUK SECTION === */
+.produk-section {
+  background-color: #fff6fa;
+  padding: 60px 40px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.produk-section h2 {
+  font-size: 2rem;
+  color: #ff4fa3;
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+
+/* === 🌸 SLIDER WRAPPER === */
+.slider-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* === 🌸 PRODUK LIST === */
+.produk-list {
+  display: flex;
+  gap: 25px;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 20px 0;
+}
+
+/* Hilangkan scrollbar */
+.produk-list::-webkit-scrollbar {
+  display: none;
+}
+.produk-list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* === 🌸 KARTU PRODUK === */
+.produk-item {
+  background: #ffffff;
+  border-radius: 20px;
+  flex: 0 0 auto;
+  width: 230px;
+  padding: 18px 15px 25px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+.produk-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(255, 150, 200, 0.3);
+}
+
+/* === 🌸 DESKRIPSI PRODUK === */
+.produk-detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  font-size: 0.85rem;
+  color: #555;
+  background: #fff0f6;
+  border-radius: 10px;
+  padding: 0 20px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.produk-item.active .produk-detail {
+  max-height: 500px;
+  padding: 12px 14px;
+  overflow-y: auto;
+}
+
+/* === 🌸 TOMBOL DESCRIPTION === */
+.btn-produk {
+  background-color: #ff7bab;
+  color: #fff;
+  border: none;
+  padding: 9px 22px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(255, 105, 180, 0.3);
+}
+
+.btn-produk:hover {
+  background-color: #ff5b96;
+  transform: translateY(-2px);
+}
+
+/* === 🌸 PANAH SLIDER === */
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ff89bb;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.slide-btn:hover {
+  background: #ff4fa3;
+  transform: scale(1.1);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* === 🌸 FOOTER === */
+footer {
+  background: linear-gradient(90deg, #ff84b7, #cdb4db);
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  border-top: 3px solid #fff6fa;
+}
+
+/* === 🌸 ANIMATION === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === 🌸 RESPONSIVE === */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 20px;
+  }
+
+  .produk-list {
+    gap: 15px;
+  }
+
+  .produk-item {
+    flex: 0 0 180px;
+  }
+}

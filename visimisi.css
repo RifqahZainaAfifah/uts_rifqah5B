@@ -1,0 +1,203 @@
+/* === FONT & GLOBAL STYLE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffd6e8;
+  color: #4a4a4a;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* === HEADER === */
+header {
+  background: linear-gradient(90deg, #ffc1e3, #d8bfd8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 3px solid #fff;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 3px;
+}
+
+header .logo h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+/* === NAVIGATION === */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+nav ul li a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 0.95rem;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ffeef5;
+  text-shadow: 0 0 10px #ffffff;
+}
+
+/* === DROPDOWN MENU === */
+nav ul li {
+  position: relative;
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background: #f9b8d4;
+  top: 100%;
+  left: 0;
+  padding: 10px 0;
+  list-style: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  min-width: 150px;
+  z-index: 1001;
+}
+
+nav ul li:hover ul {
+  display: block;
+}
+
+nav ul li ul li {
+  padding: 8px 20px;
+}
+
+nav ul li ul li a {
+  color: #fff;
+  font-weight: 500;
+  display: block;
+}
+
+nav ul li ul li a:hover {
+  color: #ffeef5;
+}
+
+/* === LOKASI & JAM === */
+.location-container {
+  background-color: #ffe6f2;
+  text-align: center;
+  padding: 15px;
+  border-bottom: 2px solid #ffb6c1;
+}
+
+.location-container h2 {
+  color: #ff69b4;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.clock {
+  font-size: 22px;
+  font-weight: 600;
+  color: #d63384;
+  background: #fff0f6;
+  display: inline-block;
+  padding: 6px 15px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(255,105,180,0.3);
+  margin-top: 5px;
+  letter-spacing: 1px;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.03); }
+}
+
+/* === 🌼 VISI & MISI SECTION === */
+.visi-misi-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.visi-misi-section h2 {
+  color: #d63384;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.visi-text {
+  font-size: 1.1em;
+  margin-bottom: 40px;
+}
+
+.misi-list {
+  list-style: none;
+  text-align: left;
+  padding-left: 0;
+}
+
+.misi-list li {
+  background: #ffe6ef;
+  margin: 10px 0;
+  padding: 12px 16px;
+  border-radius: 12px;
+  transition: background 0.3s;
+}
+
+.misi-list li:hover {
+  background: #ffd6e8;
+}
+
+/* === FOOTER === */
+footer {
+  background: linear-gradient(90deg, #ff84b7, #cdb4db);
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  border-top: 3px solid #fff6fa;
+}
+
+/* === ANIMASI FADE-IN === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
