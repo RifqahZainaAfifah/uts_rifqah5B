@@ -9,11 +9,30 @@
 </head>
 
 <body>
-   <!-- 🕒 Waktu dan Lokasi -->
+  <!-- 🕒 Waktu dan Lokasi -->
   <div class="location-container">
     <h2>Jakarta, Indonesia</h2>
     <div id="Jakarta" class="clock" aria-live="polite" aria-label="Waktu real-time di Jakarta"></div>
   </div>
+
+  <script>
+    function updateJakartaTime() {
+      const options = {
+        timeZone: "Asia/Jakarta",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      };
+
+      const time = new Intl.DateTimeFormat("id-ID", options).format(new Date());
+      document.getElementById("Jakarta").textContent = time;
+    }
+
+    updateJakartaTime();
+    setInterval(updateJakartaTime, 1000);
+  </script>
+</body>
+
 
  <!-- 💕 Header -->
   <header>
@@ -76,4 +95,5 @@
 </body>
 
 </html>
+
 
