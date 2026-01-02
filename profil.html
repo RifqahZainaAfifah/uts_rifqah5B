@@ -14,7 +14,6 @@
     <h2>Jakarta, Indonesia</h2>
     <div id="Jakarta" class="clock" aria-live="polite" aria-label="Waktu real-time di Jakarta"></div>
   </div>
-
  
  <!-- 💕 Header -->
   <header>
@@ -80,3 +79,12 @@
 
 </html>
 
+// === JAM JAKARTA REAL-TIME ===
+function updateJakartaTime() {
+  const now = new Date();
+  const options = { timeZone: "Asia/Jakarta", hour: "2-digit", minute: "2-digit", second: "2-digit" };
+  const timeString = now.toLocaleTimeString("id-ID", options);
+  document.getElementById("Jakarta").textContent = timeString;
+}
+setInterval(updateJakartaTime, 1000);
+updateJakartaTime();
